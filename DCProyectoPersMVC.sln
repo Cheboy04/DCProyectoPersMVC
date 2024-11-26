@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCProyectoPersMVC", "DCProyectoPersMVC\DCProyectoPersMVC.csproj", "{1ED0B556-4388-4B0F-8E34-9F17A37AAD64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC_ProyectoPers_API", "DC_ProyectoPers_API\DC_ProyectoPers_API.csproj", "{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1ED0B556-4388-4B0F-8E34-9F17A37AAD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED0B556-4388-4B0F-8E34-9F17A37AAD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED0B556-4388-4B0F-8E34-9F17A37AAD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
