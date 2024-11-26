@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCProyectoPersMVC", "DCProy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC_ProyectoPers_API", "DC_ProyectoPers_API\DC_ProyectoPers_API.csproj", "{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCProyectoPersAPP", "DCProyectoPersAPP\DCProyectoPersAPP.csproj", "{93253E4C-5399-4009-BF78-BF5C57BA3C4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADF70C9-FFA4-4C75-A53B-A6FAB8409CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93253E4C-5399-4009-BF78-BF5C57BA3C4A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

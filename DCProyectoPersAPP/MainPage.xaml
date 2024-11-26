@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCProyectoPersAPP.MainPage">
+
+    <StackLayout>
+        <Label
+        Text="Bienvenidos a la mejor tienda online de Bebidas!"
+        HorizontalOptions="Center"
+        VerticalOptions="CenterAndExpand"
+        Style="{StaticResource Headline}" />
+        
+        <Label
+        Text="Nuestro catálogo lo podrán encontrar al hacer click en el boton."
+        Style="{StaticResource SubHeadline}"
+        HorizontalOptions="Center"
+        VerticalOptions="CenterAndExpand"/>
+        
+        <Button Text="Dame CLICK"
+            Clicked="DC_BotonAPI"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"/>
+        
+        <ListView x:Name="DC_Lista">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding DC_Nombre}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
