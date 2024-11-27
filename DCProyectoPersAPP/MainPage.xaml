@@ -24,7 +24,13 @@
         <ListView x:Name="DC_Lista">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding DC_Nombre}" />
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding DC_Nombre}" FontAttributes="Bold" />
+                            <Label Text="{Binding DC_Precio}" TextColor="Green" />
+                            <Label Text="{Binding DC_Tipo}" FontAttributes="Italic" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

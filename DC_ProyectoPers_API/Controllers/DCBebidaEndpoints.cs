@@ -31,27 +31,51 @@ public static class DCBebidaEndpoints
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int dc_bebidaid, DCBebida dCBebida, DC_ProyectoPers_APIContext db) =>
         {
+            // Intenta convertir valores numéricos o texto basado en el enum original
+            if (Enum.TryParse<DC_Tipo>(dCBebida.DC_Tipo, out var parsedEnum))
+            {
+                dCBebida.DC_Tipo = parsedEnum.ToString(); // Convierte a texto
+            }
+            else if (int.TryParse(dCBebida.DC_Tipo, out var parsedInt) && Enum.IsDefined(typeof(DC_Tipo), parsedInt))
+            {
+                dCBebida.DC_Tipo = ((DC_Tipo)parsedInt).ToString();
+            }
+
+
             var affected = await db.DCBebida
                 .Where(model => model.DC_BebidaID == dc_bebidaid)
                 .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(m => m.DC_BebidaID, dCBebida.DC_BebidaID)
                     .SetProperty(m => m.DC_Nombre, dCBebida.DC_Nombre)
                     .SetProperty(m => m.DC_Precio, dCBebida.DC_Precio)
                     .SetProperty(m => m.DC_Tipo, dCBebida.DC_Tipo)
-                    );
+                );
+
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
-        })
-        .WithName("UpdateDCBebida")
-        .WithOpenApi();
+        });
+
 
         group.MapPost("/", async (DCBebida dCBebida, DC_ProyectoPers_APIContext db) =>
         {
+            // Verifica si el tipo es válido y realiza la conversión
+            if (Enum.TryParse<DC_Tipo>(dCBebida.DC_Tipo, out var parsedEnum))
+            {
+                dCBebida.DC_Tipo = parsedEnum.ToString(); // Convierte a texto
+            }
+            else if (int.TryParse(dCBebida.DC_Tipo, out var parsedInt) && Enum.IsDefined(typeof(DC_Tipo), parsedInt))
+            {
+                dCBebida.DC_Tipo = ((DC_Tipo)parsedInt).ToString();
+            }
+            else
+            {
+                return Results.BadRequest("El tipo de bebida no es válido.");
+            }
+
             db.DCBebida.Add(dCBebida);
             await db.SaveChangesAsync();
-            return TypedResults.Created($"/api/DCBebida/{dCBebida.DC_BebidaID}",dCBebida);
-        })
-        .WithName("CreateDCBebida")
-        .WithOpenApi();
+            return Results.Created($"/api/DCBebida/{dCBebida.DC_BebidaID}", dCBebida);
+        });
+
+
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int dc_bebidaid, DC_ProyectoPers_APIContext db) =>
         {

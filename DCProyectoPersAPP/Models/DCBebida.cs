@@ -11,6 +11,6 @@ namespace DCProyectoPersAPP.Models
         public int DC_BebidaID { get; set; }
         public string? DC_Nombre { get; set; }
         public decimal DC_Precio { get; set; }
-        public int DC_Tipo { get; set; }
+        public string? DC_Tipo { get; set; }
     }
 }
