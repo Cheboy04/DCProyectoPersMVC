@@ -26,13 +26,13 @@ namespace DCProyectoPersMVC.Controllers
         }
 
         // GET: DCBebidas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> DCIndex()
         {
             return View(await _context.DCBebida.ToListAsync());
         }
 
         // GET: DCBebidas/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> DCDetails(int? id)
         {
             if (id == null)
             {
@@ -50,7 +50,7 @@ namespace DCProyectoPersMVC.Controllers
         }
 
         // GET: DCBebidas/Create
-        public IActionResult Create()
+        public IActionResult DCCreate()
         {
             ViewData["DCTipos"] = GetDCTipos();
             return View();
@@ -59,20 +59,20 @@ namespace DCProyectoPersMVC.Controllers
         // POST: DCBebidas/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DC_BebidaID,DC_Nombre,DC_Precio,DC_Tipo")] DCBebida dCBebida)
+        public async Task<IActionResult> DCCreate([Bind("DC_BebidaID,DC_Nombre,DC_Precio,DC_Tipo")] DCBebida dCBebida)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(dCBebida);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(DCIndex));
             }
             ViewData["DCTipos"] = GetDCTipos();
             return View(dCBebida);
         }
 
         // GET: DCBebidas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> DCEdit(int? id)
         {
             if (id == null)
             {
@@ -92,7 +92,7 @@ namespace DCProyectoPersMVC.Controllers
         // POST: DCBebidas/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DC_BebidaID,DC_Nombre,DC_Precio,DC_Tipo")] DCBebida dCBebida)
+        public async Task<IActionResult> DCEdit(int id, [Bind("DC_BebidaID,DC_Nombre,DC_Precio,DC_Tipo")] DCBebida dCBebida)
         {
             if (id != dCBebida.DC_BebidaID)
             {
@@ -117,7 +117,7 @@ namespace DCProyectoPersMVC.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(DCIndex));
             }
 
             ViewData["DCTipos"] = GetDCTipos();
@@ -125,7 +125,7 @@ namespace DCProyectoPersMVC.Controllers
         }
 
         // GET: DCBebidas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> DCDelete(int? id)
         {
             if (id == null)
             {
@@ -143,7 +143,7 @@ namespace DCProyectoPersMVC.Controllers
         }
 
         // POST: DCBebidas/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DCDelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -154,7 +154,7 @@ namespace DCProyectoPersMVC.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(DCIndex));
         }
 
         private bool DCBebidaExists(int id)

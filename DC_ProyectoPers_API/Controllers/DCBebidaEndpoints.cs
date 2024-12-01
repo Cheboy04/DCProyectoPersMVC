@@ -31,10 +31,10 @@ public static class DCBebidaEndpoints
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int dc_bebidaid, DCBebida dCBebida, DC_ProyectoPers_APIContext db) =>
         {
-            // Intenta convertir valores numéricos o texto basado en el enum original
+      
             if (Enum.TryParse<DC_Tipo>(dCBebida.DC_Tipo, out var parsedEnum))
             {
-                dCBebida.DC_Tipo = parsedEnum.ToString(); // Convierte a texto
+                dCBebida.DC_Tipo = parsedEnum.ToString(); 
             }
             else if (int.TryParse(dCBebida.DC_Tipo, out var parsedInt) && Enum.IsDefined(typeof(DC_Tipo), parsedInt))
             {
@@ -56,10 +56,10 @@ public static class DCBebidaEndpoints
 
         group.MapPost("/", async (DCBebida dCBebida, DC_ProyectoPers_APIContext db) =>
         {
-            // Verifica si el tipo es válido y realiza la conversión
+            
             if (Enum.TryParse<DC_Tipo>(dCBebida.DC_Tipo, out var parsedEnum))
             {
-                dCBebida.DC_Tipo = parsedEnum.ToString(); // Convierte a texto
+                dCBebida.DC_Tipo = parsedEnum.ToString(); 
             }
             else if (int.TryParse(dCBebida.DC_Tipo, out var parsedInt) && Enum.IsDefined(typeof(DC_Tipo), parsedInt))
             {

@@ -1,11 +1,12 @@
 ﻿@model DCProyectoPersMVC.Models.DCBebida
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "DCDelete";
 }
 
-<h1>Details</h1>
+<h1>Delete</h1>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>DCBebida</h4>
     <hr />
@@ -29,8 +30,10 @@
             @Html.DisplayFor(model => model.DC_Tipo)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.DC_BebidaID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    
+    <form asp-action="DCDelete">
+        <input type="hidden" asp-for="DC_BebidaID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="DCIndex">Back to List</a>
+    </form>
 </div>
