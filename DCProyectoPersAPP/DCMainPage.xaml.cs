@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace DCProyectoPersAPP
 {
-    public partial class MainPage : ContentPage
+    public partial class DCMainPage : ContentPage
     {
-         public MainPage()
+         public DCMainPage()
         {
             InitializeComponent();
         }

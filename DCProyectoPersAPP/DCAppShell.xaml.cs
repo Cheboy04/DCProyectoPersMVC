@@ -1,8 +1,8 @@
 ﻿namespace DCProyectoPersAPP
 {
-    public partial class AppShell : Shell
+    public partial class DCAppShell : Shell
     {
-        public AppShell()
+        public DCAppShell()
         {
             InitializeComponent();
         }

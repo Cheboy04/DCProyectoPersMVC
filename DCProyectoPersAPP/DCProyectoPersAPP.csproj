@@ -63,4 +63,16 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="DCAppShell.xaml.cs">
+	    <DependentUpon>DCAppShell.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="DCApp.xaml.cs">
+	    <DependentUpon>DCApp.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="DCMainPage.xaml.cs">
+	    <DependentUpon>DCMainPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
